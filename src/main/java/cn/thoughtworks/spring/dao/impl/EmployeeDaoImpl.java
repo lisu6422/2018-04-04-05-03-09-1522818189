@@ -2,6 +2,7 @@ package cn.thoughtworks.spring.dao.impl;
 
 import cn.thoughtworks.spring.dao.EmployeeDao;
 import cn.thoughtworks.spring.domain.Employee;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -12,6 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date 2018-04-29 10:30
  * @since 1.0
  */
+@Component
 public class EmployeeDaoImpl implements EmployeeDao {
 
     private static final AtomicInteger idAtomicInterger = new AtomicInteger(0);
