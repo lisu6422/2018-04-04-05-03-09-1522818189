@@ -14,7 +14,6 @@ public interface EmployeeService {
 
     List<Employee> selectAll();
 
-
-
+    Employee add(String name, int age, String gender);
 
 }

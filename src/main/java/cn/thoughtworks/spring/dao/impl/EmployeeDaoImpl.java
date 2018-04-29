@@ -4,6 +4,7 @@ import cn.thoughtworks.spring.dao.EmployeeDao;
 import cn.thoughtworks.spring.domain.Employee;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author likly
@@ -12,6 +13,8 @@ import java.util.*;
  * @since 1.0
  */
 public class EmployeeDaoImpl implements EmployeeDao {
+
+    private static final AtomicInteger idAtomicInterger = new AtomicInteger(0);
 
     private static final Map<Integer, Employee> map = new LinkedHashMap<>();
 
@@ -25,6 +28,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public int insert(List<Employee> domains) {
 
         for (Employee domain : domains) {
+            domain.setId(idAtomicInterger.incrementAndGet());
             map.put(domain.getId(), domain);
         }
 

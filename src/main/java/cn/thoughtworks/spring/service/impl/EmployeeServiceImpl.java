@@ -20,9 +20,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Resource
     private EmployeeDao employeeDao;
 
-
     @Override
     public List<Employee> selectAll() {
         return employeeDao.selectAll();
     }
+
+    @Override
+    public Employee add(String name, int age, String gender) {
+        final Employee employee = new Employee(name, age, gender);
+        employeeDao.insert(employee);
+        return employee;
+    }
+
 }

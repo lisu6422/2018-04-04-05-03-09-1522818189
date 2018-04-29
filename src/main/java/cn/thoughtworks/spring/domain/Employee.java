@@ -14,6 +14,16 @@ public class Employee extends Domain<Integer> {
     private Integer age;
     private String gender;
 
+    public Employee() {
+    }
+
+    public Employee(String name, Integer age, String gender) {
+        this();
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+
     public Integer getId() {
         return id;
     }
