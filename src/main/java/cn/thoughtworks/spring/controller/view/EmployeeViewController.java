@@ -24,7 +24,7 @@ public class EmployeeViewController {
     private EmployeeService employeeService;
 
 
-    @RequestMapping("/employee/get")
+    @RequestMapping("/get")
     public String get(Model model) {
 
 
