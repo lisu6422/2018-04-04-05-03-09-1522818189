@@ -3,6 +3,7 @@ package cn.thoughtworks.spring.controller;
 import cn.thoughtworks.spring.domain.Employee;
 import cn.thoughtworks.spring.service.EmployeeService;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -23,5 +24,12 @@ public class EmployeeController {
     @RequestMapping("/employees")
     public List<Employee> selectAll() {
         return employeeService.selectAll();
+    }
+
+    @RequestMapping("/employee/add")
+    public Employee add(@RequestParam("name") String name,
+                        @RequestParam("age") int age,
+                        @RequestParam("gender") String gender) {
+        return employeeService.add(name, age, gender);
     }
 }
