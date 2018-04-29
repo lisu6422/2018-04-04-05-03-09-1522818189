@@ -20,6 +20,17 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     private static final Map<Integer, Employee> map = new LinkedHashMap<>();
 
+    private final List<Employee> deafult = Arrays.asList(
+            new Employee("小明", 20, "男"),
+            new Employee("小红", 19, "女"),
+            new Employee("小智", 15, "男"),
+            new Employee("小刚", 16, "男"),
+            new Employee("小霞", 15, "女")
+    );
+
+    {
+        this.insert(deafult);
+    }
 
     @Override
     public int insert(Employee... domains) {
