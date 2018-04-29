@@ -9,7 +9,6 @@ package cn.thoughtworks.spring.domain;
 public class Employee extends Domain<Integer> {
 
     private static final long serialVersionUID = -235812500524704751L;
-    private Integer id;
     private String name;
     private Integer age;
     private String gender;
@@ -18,19 +17,11 @@ public class Employee extends Domain<Integer> {
     }
 
     public Employee(String name, Integer age, String gender) {
-        this();
         this.name = name;
         this.age = age;
         this.gender = gender;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -61,13 +52,13 @@ public class Employee extends Domain<Integer> {
         if (obj == null) return false;
         if (!(obj instanceof Employee)) return false;
 
-        return id.equals(((Employee) obj).id);
+        return getId().equals(((Employee) obj).getId());
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
